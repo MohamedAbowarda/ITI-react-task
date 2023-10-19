@@ -1,0 +1,13 @@
+.Details img{
+    width: 30%;
+}
+.info {
+    width: 50%;
+}
+.info .descr {
+    line-height: 1.7;
+    color: #5f5d5d;
+}
+.info .cate {
+    color: goldenrod;
+}

@@ -1,0 +1,14 @@
+.star {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Empty_Star.svg');
+
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.star.filled {
+  background-image: url('https://freeiconshop.com/wp-content/uploads/edd/star-outline-filled.png');
+}
