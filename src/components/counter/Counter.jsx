@@ -1,21 +1,21 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
-function Counter() {
-  const [counter, setcounter] = useState(200);
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "../../redux/slices/counterSlice";
 
-  const increment = () => {
-    setcounter(counter + 1);
-  };
-  const decrement = () => {
-    if (counter > 0) setcounter(counter - 1);
-  };
+function Counter() {
+const counterGlobalState = useSelector((state) => state.counterReducer.value);
+const dispatch = useDispatch();
+const handleIncrement = () => dispatch(increment());
+const handleDecrement = () => dispatch(decrement());
+
+
   return (
     <div className="Counter my-5 container d-flex justify-content-evenly align-items-center">
-      <Button onClick={increment} variant="primary">
+      <Button onClick={handleIncrement} variant="primary">
         Increment
       </Button>
-      <p>{counter}</p>
-      <Button onClick={decrement} variant="secondary">
+      <p>{counterGlobalState}</p>
+      <Button onClick={handleDecrement} variant="secondary">
         Decrement
       </Button>
     </div>

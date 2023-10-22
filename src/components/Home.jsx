@@ -5,15 +5,27 @@ import Card from "react-bootstrap/Card";
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import axios from "axios";
 
 function Home() {
   const [products, setProducts] = useState([]);
 
-  const getproducts = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
+  // fetch
+  // const getproducts = async () => {
+  //   await fetch("https://fakestoreapi.com/products", {
+  //     method: "GET",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => setProducts(json));
+  // };
+
+  // axios
+
+  const getproducts = async () => {
+    const res = await axios.get("https://fakestoreapi.com/products");
+    setProducts(res.data);
   };
+
   useEffect(() => {
     getproducts();
   }, []);
@@ -24,7 +36,7 @@ function Home() {
       <div className=" container products-list d-flex justify-content-between align-items-stretch flex-wrap">
         {products.map((product) => {
           return (
-            <div className="product-item mb-5 d-flex flex-column justify-content-between align-items-between">
+            <div className="product-item mb-5">
               <Card
                 style={{ width: "18rem" }}
                 className="h-100 d-flex flex-column justify-content-between "
