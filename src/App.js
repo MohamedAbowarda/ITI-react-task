@@ -1,11 +1,12 @@
-import './App.css';
+import "./App.css";
 import Navcomp from "./components/Navcomp";
 import Home from "./components/Home";
 import Features from "./components/Features";
 import Pricing from "./components/Pricing";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"; 
-import Details from './components/Details';
-import Counter from './components/counter/Counter';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Details from "./components/Details";
+import Counter from "./components/counter/Counter";
+import SignIn from "./components/SignIn/SignIn";
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Features" element={<Features />}></Route>
           <Route path="/Pricing" element={<Pricing />}></Route>
           <Route path="/Counter" element={<Counter />}></Route>
+          <Route path="/LogIn" element={<SignIn />}></Route>
           <Route path="/:title/:id" element={<Details />}></Route>
         </Routes>
       </div>

@@ -32,6 +32,11 @@ function Navcomp() {
               Counter
             </Link>
           </Nav.Link>
+          <Nav.Link>
+            <Link to="/LogIn" className="nav-link">
+              LogIn
+            </Link>
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
